@@ -1,0 +1,13 @@
+# Short Report — Survival Analysis 
+
+
+Using parametric AFT models (Weibull, Log-normal, Log-logistic) we studied factors associated with customer churn.
+After preprocessing and model comparison by AIC, the best-fitting model indicates that features such as age, income, and length of residence (address) have significant associations with survival time.
+Positive coefficients in the AFT framework indicate longer expected tenure while negative coefficients shorten expected tenure.
+For example, higher income and longer tenure-related variables increase survival probabilities, suggesting these customers are less likely to churn.
+
+
+I define "valuable" customers as those with high predicted 12-month CLV and high survival probability.
+In practice these are customers with higher monthly revenue and lower predicted churn risk. 
+Using the final model, I computed CLV for each subscriber and identified segments with the highest average CLV. 
+Assuming the dataset represents the population, an annual retention budget could be estimated by summing the CLV of customers whose predicted 12-month survival probability falls below a chosen threshold and targeting offers up to their CLV to retain them.
